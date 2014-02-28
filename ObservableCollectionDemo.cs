@@ -2,31 +2,43 @@
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Collections.Specialized;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ConsoleApplication12
+namespace CSharpDemos
 {
-   class Program
+   public class ObservableCollectionDemo
    {
-      static void Main(string[] args)
+      public static void Go()
       {
          var nameList = new NameList();
-         nameList.CollectionChanged += NameListCollectionChanged;
+         nameList.CollectionChanged += ItemsCollectionChanged;
+
          var p = new PersonName("Jasper", "Qiu");
          nameList.Add(p);
          nameList.Remove(nameList.FirstOrDefault(item => item.FirstName.Equals("Willa")));
          Console.Read();
       }
 
-      static void NameListCollectionChanged(object sender, NotifyCollectionChangedEventArgs e)
+      static void ItemsCollectionChanged(object sender,
+                NotifyCollectionChangedEventArgs e)
       {
+         foreach (INotifyPropertyChanged item in e.OldItems)
+            item.PropertyChanged -= ItemPropertyChanged;
 
-         Console.WriteLine("Changed");
-         
+         foreach (INotifyPropertyChanged item in e.NewItems)
+            item.PropertyChanged += ItemPropertyChanged;
       }
+
+      static void ItemPropertyChanged(object sender, PropertyChangedEventArgs e)
+      {
+         Console.WriteLine("Something changed!");
+      }
+
    }
+
 
    public class NameList : ObservableCollection<PersonName>
    {
@@ -59,11 +71,11 @@ namespace ConsoleApplication12
       ////     Occurs when the collection changes.
       //public override event NotifyCollectionChangedEventHandler CollectionChanged
       //{
-        
+
       //}
    }
 
-   public class PersonName
+   public class PersonName : INotifyPropertyChanged
    {
       private string firstName;
       private string lastName;
@@ -85,6 +97,8 @@ namespace ConsoleApplication12
          get { return lastName; }
          set { lastName = value; }
       }
+
+      public event PropertyChangedEventHandler PropertyChanged;
    }
 
 }
