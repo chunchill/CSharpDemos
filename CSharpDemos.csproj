@@ -42,7 +42,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ObservableCollectionDemo.cs" />
+    <Compile Include="Programs.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="VirtualEventDemo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

@@ -1,7 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSharpDemos", ".\CSharpDemos.csproj", "{C038446A-B476-4209-957A-FF6AA9139F6E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSharpDemos", "CSharpDemos.csproj", "{C038446A-B476-4209-957A-FF6AA9139F6E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebFormDemos", "..\WebFormDemos\WebFormDemos.csproj", "{BA0802E1-0E72-4F4F-967C-38F4D199A721}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -13,6 +15,10 @@ Global
 		{C038446A-B476-4209-957A-FF6AA9139F6E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C038446A-B476-4209-957A-FF6AA9139F6E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C038446A-B476-4209-957A-FF6AA9139F6E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BA0802E1-0E72-4F4F-967C-38F4D199A721}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BA0802E1-0E72-4F4F-967C-38F4D199A721}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BA0802E1-0E72-4F4F-967C-38F4D199A721}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BA0802E1-0E72-4F4F-967C-38F4D199A721}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
